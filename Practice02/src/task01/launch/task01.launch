@@ -6,7 +6,7 @@ def generate_launch_description():
         Node(
             package='task01',
             executable='receiver',
-            name='receiver_node',
+            name='receiver',
             output='screen',
         ),
     ])
