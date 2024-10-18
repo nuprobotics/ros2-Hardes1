@@ -5,6 +5,7 @@ from std_msgs.msg import String
 class Receiver(Node):
     def __init__(self):
         super().__init__('receiver')
+        self.a = -10
         self.subscription = self.create_subscription(
             String,
             '/spgc/sender',
