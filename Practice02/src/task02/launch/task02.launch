@@ -1,10 +1,9 @@
-import os
-from importlib.util import find_spec
-
-from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
+from launch.substitutions import LaunchConfiguration
 from launch.actions import DeclareLaunchArgument
+from ament_index_python.packages import get_package_share_directory
 from launch_ros.actions import Node
+import os
 
 def generate_launch_description():
     config = os.path.join(
@@ -21,11 +20,13 @@ def generate_launch_description():
 
     return LaunchDescription([
         text_arg,
+
         Node(
             package='task02',
-            executable='publisher',
-            name='publisher',
+            executable='task02_publisher',
+            name='task02_publisher',
             output='screen',
-            parameters=[config, {'text': LaunchConfiguration('text')}]
-        ),
+            parameters=[config,
+                        {'text': LaunchConfiguration('text')}]
+        )
     ])
