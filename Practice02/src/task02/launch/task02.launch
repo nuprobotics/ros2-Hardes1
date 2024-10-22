@@ -26,7 +26,6 @@ def generate_launch_description():
             executable='publisher',
             name='publisher',
             output='screen',
-            parameters=[config,
-                        {'text': LaunchConfiguration('text')}]
+            parameters=[config]
         )
     ])
