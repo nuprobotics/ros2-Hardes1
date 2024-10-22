@@ -12,7 +12,6 @@ class Publisher(Node):
         self.topic_name_parameter = self.get_parameter("topic_name").get_parameter_value().string_value
         self.text_parameter = self.get_parameter("text").get_parameter_value().string_value
 
-
         self.publisher = self.create_publisher(String, self.topic_name_parameter, 1)
         self.timer = self.create_timer(1.0, self.publish_message)
 
@@ -25,7 +24,7 @@ class Publisher(Node):
 def main(args=None):
     rclpy.init(args=args)
     node = Publisher()
-    rclpy.spin_once(node)
+    rclpy.spin(node)
     rclpy.shutdown()
 
 
