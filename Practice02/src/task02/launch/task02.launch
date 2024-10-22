@@ -23,8 +23,8 @@ def generate_launch_description():
 
         Node(
             package='task02',
-            executable='task02_publisher',
-            name='task02_publisher',
+            executable='publisher',
+            name='publisher',
             output='screen',
             parameters=[config,
                         {'text': LaunchConfiguration('text')}]
