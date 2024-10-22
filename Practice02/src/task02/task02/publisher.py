@@ -8,7 +8,7 @@ class Publisher(Node):
         super().__init__('task02')
         self.get_logger().info("publisher started")
 
-        self.declare_parameter('text', 'Hello, ROS2!')
+        self.declare_parameter('text', None)
         self.declare_parameter('topic_name', None)
 
         # Get parameters
