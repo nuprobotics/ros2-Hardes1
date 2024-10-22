@@ -6,8 +6,8 @@ from std_msgs.msg import String
 class Publisher(Node):
     def __init__(self):
         super().__init__('publisher')
-        self.declare_parameter("topic_name", "")
-        self.declare_parameter("text", "")
+        self.declare_parameter("topic_name", None)
+        self.declare_parameter("text", None)
 
         self.topic_name_parameter = self.get_parameter("topic_name").get_parameter_value().string_value
         self.text_parameter = self.get_parameter("text").get_parameter_value().string_value
