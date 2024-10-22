@@ -5,7 +5,7 @@ from std_msgs.msg import String
 
 class Publisher(Node):
     def __init__(self):
-        super().__init__('task02')
+        super().__init__('publisher')
         # self.get_logger().info("publisher started")
 
         self.declare_parameter('text', None)
