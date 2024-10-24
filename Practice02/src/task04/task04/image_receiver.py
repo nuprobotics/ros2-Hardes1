@@ -48,7 +48,7 @@ class ImageReceiver(Node):
         self.stop_saving = True
         self.get_logger().info("Image saving has been stopped.")
         response.success = True
-        response.data = None
+        response.message = None
         return response
 
 
